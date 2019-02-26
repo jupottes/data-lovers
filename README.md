@@ -1,5 +1,26 @@
 # Data Lovers
 
+
+## Introdução
+
+
+
+## A APLICAÇÃO
+
+
+
+## USUÁRIO
+
+![data-lovers](/imgs/esboços/usuario.jpg)
+
+
+## ESBOÇOS DE BAIXA FIDELIDADE DA APLICAÇÃO
+
+![data-lovers](/imgs/esboços/index.jpg)
+![data-lovers](/imgs/esboços/comparacao.jpg)
+![data-lovers](/imgs/esboços/pokemon.jpg)
+
+
 ## Índice
 
 * [Preâmbulo](#preâmbulo)
@@ -17,20 +38,6 @@
 
 ## Preâmbulo
 
-Segundo um [estudo da IBM](https://www-01.ibm.com/common/ssi/cgi-bin/ssialias?htmlfid=WRL12345USEN),
-90% dos dados que existem hoje foram criados durante os últimos dois anos.
-A cada dia geramos 2,5 trilhões de bytes de dados, uma cifra sem precedentes.
-Apesar disso, os dados por sozinhos são de pouca utilidade. Para que essas
-grandes quantidades de dados se convertam em **informação** fácil de ler para
-os usuários, temos que entendê-los e processá-los. Uma maneira simples
-de se fazer isso seria criando _interfaces_ e _visualizações_.
-Na seguinte imagem, você pode ver de que forma, com os dados que vemos na parte
-esquerda, é possível construir uma interface amigável e legível para o usuário.
-
-![json-interface](https://lh4.googleusercontent.com/Tn-RPXS26pVvOTdUzRT1KVaJ-_QbFs9SpcGLxSPE43fgbHaXtFgMUInuDt7kV41DkT1j8Tt29V0LxQW7SMtC6digOIhfTXSBKdwI08wUwhD3RAqlwy0hjfmhZ2BFe91mtmCSEqysfgk)
-
-Você pode ver os detalhes dos dados neste [link](https://gist.github.com/lalogf/dd4aa3017a9f8aa8f90dfbca382c4dc9#file-student-json)
-e a interface construída neste [link](https://app.talento.laboratoria.la/profile/HFOoMpOreBU2psCcjjLg5O2EWEv2).
 
 ## Resumo do projeto
 
