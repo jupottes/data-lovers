@@ -1,4 +1,4 @@
-const POKEMON = {
+const pokemons = {
   "pokemon": [{
     "id": 1,
     "num": "001",

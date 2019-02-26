@@ -27,7 +27,19 @@ window.onload = function() {
   `
   }
 
-  let sorteandoIdades = meuArray.sort(function (a, b) {
+
+  /*const sortPokemons = () => {
+   showPokemons().sort(function (a, b){
+     return a.name - b.name
+   })
+console.log(sortPokemons)
+  }
+  /*const sortPokemons = () => {
+  ${getPokemons().sort(function (a, b) {
+    return a.name - b.name;)
+  }*/
+
+  /*let sorteandoIdades = meuArray.sort(function (a, b) {
     return a.idade - b.idade;
   });
-  console.log(sorteandoIdades);
+  console.log(sorteandoIdades);*/
