@@ -11,14 +11,14 @@
 
 ## USUÁRIO
 
-![data-lovers](/imgs/esboços da aplicação/usuario.jpg)
+![data-lovers](/imgs/esbocos/usuario.jpg)
 
 
 ## ESBOÇOS DE BAIXA FIDELIDADE DA APLICAÇÃO
 
-![data-lovers](/imgs/esboços da aplicação/index.jpg)
-![data-lovers](/imgs/esboços da aplicação/comparacao.jpg)
-![data-lovers](/imgs/esboços da aplicação/pokemon.jpg)
+![data-lovers](/imgs/esbocos/index.jpg)
+![data-lovers](/imgs/esbocos/comparacao.jpg)
+![data-lovers](/imgs/esbocos/pokemon.jpg)
 
 
 ## Índice
