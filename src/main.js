@@ -1,3 +1,28 @@
-var test = document.write("o pokemon 1 é o:" + pokemon[2].name);
-
-document.getElementById("root").innerHTML = test;
+window.onload = function() {
+    showPokemons();
+  
+  };
+  
+  const getPokemons =() => pokemons["pokemon"];
+  
+  
+  const showPokemons =() =>{
+  let pokemonList = document.getElementById("pokemons-div");
+  
+  pokemonList.innerHTML = `
+  ${getPokemons().map((pkm) => `
+    <div class="pkm-item">
+      <img src="${pkm["img"]}" class="pkm-img" />
+      <div class="text-price">
+        <p class="pkm-num">${pkm["num"]}</p>
+      </div>
+      <div class="text-name">
+        <h3 class="pkm-name">${pkm["name"]}</h3>
+      </div>
+      
+  </div>
+  `
+  ).join("")
+  }
+  `
+  }
