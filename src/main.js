@@ -26,3 +26,8 @@ window.onload = function() {
   }
   `
   }
+
+  let sorteandoIdades = meuArray.sort(function (a, b) {
+    return a.idade - b.idade;
+  });
+  console.log(sorteandoIdades);
