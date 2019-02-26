@@ -6,7 +6,7 @@ window.onload = function() {
   const getPokemons =() => pokemons["pokemon"];
   
   
-  const showPokemons =() =>{
+  /*const showPokemons =() =>{
   let pokemonList = document.getElementById("pokemons-div");
   
   pokemonList.innerHTML = `
@@ -25,21 +25,43 @@ window.onload = function() {
   ).join("")
   }
   `
-  }
 
 
-  /*const sortPokemons = () => {
-   showPokemons().sort(function (a, b){
-     return a.name - b.name
-   })
-console.log(sortPokemons)
-  }
-  /*const sortPokemons = () => {
-  ${getPokemons().sort(function (a, b) {
-    return a.name - b.name;)
   }*/
+  const showPokemons =() =>{
+    let pokemonList = document.getElementById("pokemons-div");
+    pokemonList.innerHTML =`
+    ${getPokemons().map((pkm) => `
+      <div class="pkm-item">
+        <img src="${pkm["img"]}" class="pkm-img" />
+        <div class="text-price">
+          <p class="pkm-num">${pkm["num"]}</p>
+        </div>
+        <div class="text-name">
+          <h3 class="pkm-name">${pkm["name"]}</h3>
+          <p class="pkm-num">${pkm["type"][0]}</p>
+        </div>
+        
+    </div>
+    `
+    ).join("")
+    }
+    ` 
+  }
 
-  /*let sorteandoIdades = meuArray.sort(function (a, b) {
-    return a.idade - b.idade;
-  });
-  console.log(sorteandoIdades);*/
+  
+  //Aqui ele está trazendo todos do tipo fogo
+  //O "tipo" dentro da função vai ser comparado de acordo com o valor do search*/
+  //Função funcionando
+ const filterByType = () =>{
+
+  let filteredByType = getPokemons().filter(pkms => (pkms["type"][0] == "Fire"));
+  return filteredByType
+}
+// console.log(filterByType());
+
+ const sortByName = () =>{
+ let sorted = getPokemons().sort(pkms => (pkms[name])
+ console.log(sorted;
+  }
+   
