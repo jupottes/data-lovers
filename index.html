@@ -22,12 +22,18 @@
       </ul>
     </nav>
   </header>
+  
   <!--Seção área de busca e filtros-->
   <section class="area-search">
-    <h3 class="tittle-search">Busque seu pokemon por tipo, fraqueza, habilidade e mais!</h3>
-    <input tabindex="1" autocomplete="off" required="" type="text" name="busca" class="input-search"
-      placeholder="PROCURE SEU POKEMON">
-    <button id="botao" class="button-search" value="buscar">BUSCAR</button>
+      <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Buscar Pokemons por..." title="Type in a name">
+
+      <ul id="myUL">
+        <li><a id="nameSearch">NOME</a></li>
+        <li><a id="typeSearch">TIPO</a></li>
+        <li><a id="numberSearch">NÚMERO</a></li>
+        <li><a id="eggSearch">OVO</a></li>
+        <li><a id="hoursSearch">HORÁRIOS</a></li>
+      </ul>
   </section>
 
   <main>
