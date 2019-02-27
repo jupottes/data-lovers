@@ -3,10 +3,57 @@ body {
     width: 100vw;
     font-family: 'Niramit', sans-serif;
     font-size: 1.2rem;
-    background-color: #c5f7d6;
+    background-image: url(https://pokemongophilippines.files.wordpress.com/2016/08/whosthatpokemon_1349921665_7.jpg);
+    background-repeat: repeat-y;
   
   }
-  
+
+/*FORMATAÇÃO GERAL DO MENU SUPERIOR*/
+
+/*MENU*/
+.menu-top{
+  background-color: #2C3E50;
+  padding:15px;
+  margin:0px;
+  list-style:none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/*ALINHAMENTO GERAL MENU*/
+.menu ul li{
+  display: inline;
+}
+
+/*ALINHAMENTO LINKS*/
+.menu{
+  display: flex;
+  justify-content: flex-end;
+}
+
+/*FORMATAÇÃO TEXTO LINKS*/
+.menu ul li a{
+  padding: 2px 10px;
+  display: inline-block;
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  text-decoration: none;
+  border-bottom: none;
+}
+
+/*FORMATAÇÃO DA POKEBOLA*/
+.logo-bola{
+  width: 50px;
+}
+
+.logo-name{
+  width: 200px;
+  align-items: center;
+}
+
+/* ----*/
+
   h3, p {
     margin: 0;
   }
@@ -18,9 +65,49 @@ body {
     flex-wrap: wrap;
     justify-content: center;
   }
-  
+
+  /*FORMATAÇÃO GERAL DAS BUSCAS E FILTROS DOS POKEMONS*/
+
+.area-search{
+  display: flex;
+  justify-content: space-between;
+}
+
+.tittle-search{
+  font-size: 12px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* ÁREA DE BUSCA*/
+.search1{
+  left: 300px;
+  background-color: black;
+  width: 300px;
+}
+.search2{
+  left: 300px;
+  background-color: black;
+  width: 300px;
+}
+.search2{
+  left: 300px;
+  background-color: black;
+  width: 300px;
+}
+
+/*BOTÃO DE BUSCA*/
+.button-search{
+  width: 90px;
+  background-color: rgb(103, 103, 219);
+}
+
+
+
+  /*FORMATAÇÃO GERAL DE COMO APARECEM OS POKEMONS*/
+
+  /*FUNDO CARD POKEMON*/
   .pkm-item {
-    background-color: #fff;
+    background-color: rgba(255, 255, 255, 0.534);
     width: 25%;
     margin: 20px;
     padding-top: 20px;
@@ -28,21 +115,29 @@ body {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    border-radius: 20px;
   }
   
-  
+  /*IMAGEM POKEMON*/
   .pkm-img {
     width: 70%;
+    border-radius: 50%;
+    border: rgb(131, 131, 131);
+    background-color: rgba(255, 255, 255, 0.644);
+    padding: 10px;
+    
   }
-  
+
+  /*NOME POKEMON*/
   .pkm-name {
     text-align: center;
     margin: auto;
-    font-size: 1rem;
+    font-size: 1.5rem;
     width: 70%;
     padding: 15px;
   }
-  
+
+  /*NUM POKEMON*/
   .pkm-num {
     text-align: center;
     margin: auto;
@@ -50,3 +145,5 @@ body {
     padding: 15px;
     margin-top: 0;
   }
+  /* ----*/
+
