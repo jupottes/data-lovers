@@ -1,52 +1,104 @@
+/*menu superior*/
+.menu-top{
+  background-color: #2C3E50;
+  padding:15px;
+  margin:0px;
+  list-style:none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/*alinhamento menu*/
+.menu ul li{
+  display: inline;
+}
+
+/*alinhamento itens menu (links)*/
+.menu{
+  display: flex;
+  justify-content: flex-end;
+}
+
+/*formatação menu*/
+.menu ul li a{
+  padding: 2px 10px;
+  display: inline-block;
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  text-decoration: none;
+  border-bottom: none;
+}
+
+.home a{
+  font-size: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  text-decoration: none;
+}
+/*formatação icone bola*/
+.logo-bola {
+  width: 50px;
+}
+
+/*formatação icone nome pokemon*/
+.logo-name {
+  width: 200px;
+  align-items: center;
+}
+
+/*formatação geral do BODY*/
 body {
-    margin: 0;
-    width: 100vw;
-    font-family: 'Niramit', sans-serif;
-    font-size: 1.2rem;
-    background-color: #c5f7d6;
+  width: 100vw;
+  font-family: Niramit, sans-serif;
+  font-size: 1.2rem;
+  background-image: url(https://pokemongophilippines.files.wordpress.com/2016/08/whosthatpokemon_1349921665_7.jpg);
+  margin: 0px;
+  background-repeat: repeat-y;
+}
   
-  }
-  
-  h3, p {
-    margin: 0;
-  }
-  
-   .pokemons{
-    width: 80%;
-    margin: auto;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  
-  .pkm-item {
-    background-color: #fff;
-    width: 25%;
-    margin: 20px;
-    padding-top: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  
-  .pkm-img {
-    width: 70%;
-  }
-  
-  .pkm-name {
-    text-align: center;
-    margin: auto;
-    font-size: 1rem;
-    width: 70%;
-    padding: 15px;
-  }
-  
-  .pkm-num {
-    text-align: center;
-    margin: auto;
-    width: 70%;
-    padding: 15px;
-    margin-top: 0;
-  }
+.pokemons{
+  width: 80%;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/*formatação CARD dos pokemons*/
+.pkm-item {
+  background-color: rgba(255, 255, 255, 0.651);
+  border-radius: 15px;
+  width: 25%;
+  margin: 20px;
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/*formatação imagem dos pokemons*/
+.pkm-img {
+  width: 70%;
+}
+
+/*formatação nomes dos pokemons*/
+.pkm-name {
+  text-align: center;
+  margin: auto;
+  font-size: 1rem;
+  width: 70%;
+  padding: 15px;
+}
+
+/*formatação numeros dos pokemons*/
+.pkm-num {
+  text-align: center;
+  margin: auto;
+  width: 70%;
+  padding: 15px;
+  margin-top: 0;
+}
