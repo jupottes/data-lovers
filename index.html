@@ -22,20 +22,47 @@
       </ul>
     </nav>
   </header>
-  
+
   <!--Seção área de busca e filtros-->
-  <section class="area-search">
-      <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Buscar Pokemons por..." title="Type in a name">
-
-      <ul id="myUL">
-        <li><a id="nameSearch">NOME</a></li>
-        <li><a id="typeSearch">TIPO</a></li>
-        <li><a id="numberSearch">NÚMERO</a></li>
-        <li><a id="eggSearch">OVO</a></li>
-        <li><a id="hoursSearch">HORÁRIOS</a></li>
+  <header class="area-search">
+    <section class="nameSearch style-search">
+      <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Buscar por nome" title="Type in a name">
+      <button class="button-search-name">Buscar</button>
+    </section>
+    <section class="numberSearch style-search">
+      <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Buscar por número" title="Type in a number">
+      <button class="button-search-name">Buscar</button>
+    </section>
+    <section class="typeSearch style-search">
+      <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Buscar por tipo" title="Type in a type">
+      <ul id="types" class="stylesearch">
+        <li><a id="fire" value="fire">FOGO</a></li>
+        <li><a id="grass" value="grass">GRAMA</a></li>
+        <li><a id="flying" value="flying">VOADOR</a></li>
+        <li><a id="water" value="water">ÁGUA</a></li>
+        <li><a id="normal" value="normal">NORMAL</a></li>
+        <li><a id="eletric" value="eletric">ELÉTRICO</a></li>
+        <li><a id="ground" value="ground">TERRESTRE</a></li>
+        <li><a id="fairy" value="fairy">FADA</a></li>
+        <li><a id="fighting" value="fighting">LUTADOR</a></li>
+        <li><a id="psychic" value="psychic">PSÍQUICO</a></li>
+        <li><a id="rock" value="rock">PEDRA</a></li>
+        <li><a id="steel" value="steel">FERRO</a></li>
+        <li><a id="ghost" value="ghost">FANTASMA</a></li>
+        <li><a id="ice" value="ice">GELO</a></li>
+        <li><a id="dragon" value="dragon">DRAGÃO</a></li>
       </ul>
-  </section>
-
+    </section>
+    <section class="eggSearch style-search">
+      <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Buscar por Ovo" title="Type in a egg">
+      <ul id="types" class="stylesearch">
+        <li><a id="0km" value="0km">0km</a></li>
+        <li><a id="2km" value="2km">2km</a></li>
+        <li><a id="5km" value="5km">5km</a></li>
+        <li><a id="10km" value="10km">10km</a></li>
+      </ul>
+    </section>
+  </header>
   <main>
     <section id="pokemons-list">
       <div id="pokemons-div" class="pokemons"></div>
