@@ -37,6 +37,8 @@ const filterByType = () =>{
 meusPokemons = meusPokemons.filter(pkms => (pkms["type"][0] == "Fire"));
 showPokemons()
 }
+const searchByType = document.querySelector("#typeSearch");
+searchByType.addEventListener("click", filterByType);
 
 //Essa filtra pelo ovo
 //Distancia percorrida necessária para o pokemon nascer 
@@ -47,8 +49,27 @@ showPokemons()
 }
 
 
+//FUNÇÃO INPUT DA BUSCA
+function myFunction() {
+  search.style.display= "block";
+  var input, filter, ul, li, a, i, txtValue;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  ul = document.getElementById("myUL");
+  li = ul.getElementsByTagName("li");
+  for (i = 0; i < li.length; i++) {
+      a = li[i].getElementsByTagName("a")[0];
+      txtValue = a.textContent || a.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+          li[i].style.display = "";
+      } else {
+          li[i].style.display = "none";
+      }
+  }
+}
 
-
+let search = document.getElementById("myUL");
+search.style.display= "none";
 
 
 

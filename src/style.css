@@ -54,7 +54,9 @@ body {
   width: 100vw;
   font-family: Niramit, sans-serif;
   font-size: 1.2rem;
-  background-image: url(https://pokemongophilippines.files.wordpress.com/2016/08/whosthatpokemon_1349921665_7.jpg);
+  background-image: url(https://images4.alphacoders.com/574/thumb-1920-574726.jpg);
+  background-size: 100%;
+  background-attachment: fixed;
   margin: 0px;
   background-repeat: repeat-y;
 }
@@ -69,7 +71,7 @@ body {
 
 /*formatação CARD dos pokemons*/
 .pkm-item {
-  background-color: rgba(255, 255, 255, 0.651);
+  background-color: rgba(255, 255, 255, 0.87);
   border-radius: 15px;
   width: 25%;
   margin: 20px;
@@ -101,4 +103,41 @@ body {
   width: 70%;
   padding: 15px;
   margin-top: 0;
+}
+
+/* SEARCH*/
+* {
+  box-sizing: border-box;
+}
+
+#myInput {
+  background-image: url('/css/searchicon.png');
+  background-position: 10px 12px;
+  background-repeat: no-repeat;
+  width: 100%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+
+#myUL {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+#myUL li a {
+  border: 1px solid #ddd;
+  margin-top: -1px; /* Prevent double borders */
+  background-color: #f6f6f6;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  color: black;
+  display: block
+}
+
+#myUL li a:hover:not(.header) {
+  background-color: #eee;
 }
