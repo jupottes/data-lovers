@@ -4,7 +4,8 @@ window.onload = function() {
   };
   
   const getPokemons =() => pokemons["pokemon"];
-
+  //Essa variável vai "guardar" as mudanças aplicadas pelos filtros
+  //Sem ela os pokemons não são exibidos na tela
   let meusPokemons = getPokemons()
   
   const showPokemons =() =>{
@@ -28,33 +29,34 @@ window.onload = function() {
     ` 
   }
 
- const filterByType = () =>{
+
+
+  // Função que filtra o pokemon por tipo
+  //A variável tipo vai ser puxada do html
+const filterByType = () =>{
 meusPokemons = meusPokemons.filter(pkms => (pkms["type"][0] == "Fire"));
 showPokemons()
-  //console.log(filteredByType);
 }
-//console.log(filterByType());
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*const filterByEgg = () =>{
-
-  let filteredByType = getPokemons().filter(pkms => (pkms["egg"][0] == "2"));
-  return filteredByType
+//Essa filtra pelo ovo
+//Distancia percorrida necessária para o pokemon nascer 
+//2, 5 ou 10km
+const filterByEgg = () =>{
+  meusPokemons = meusPokemons.filter(pkms => (pkms["egg"] == "2 km"));
+showPokemons()
 }
- const sortByName = () =>{
- let sorted = getPokemons().sort(pkms => (pkms[name])
- console.log(sorted;
-  }
-   */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
