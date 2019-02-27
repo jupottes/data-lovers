@@ -45,9 +45,7 @@ console.log(allCheck)
 for (btns of allCheck){
   console.log(btns)
  btns.addEventListener("click", function (e){let tipoPkm = e.target.id
-  meusPokemons = meusPokemons.filter(pkms => (pkms["type"][0] == tipoPkm))
-  // filterByType()
-})
+  meusPokemons = meusPokemons.filter(pkms => (pkms["type"][0] == tipoPkm || pkms["type"][1] == tipoPkm))})
 }
 
 const filterByType = () =>{
