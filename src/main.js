@@ -8,6 +8,8 @@ const getPokemons =() => pokemons["pokemon"];
 //Sem ela os pokemons não são exibidos na tela
 let meusPokemons = getPokemons()
 
+
+
 const showPokemons =() =>{
   let pokemonList = document.getElementById("pokemons-div");
   pokemonList.innerHTML =`
@@ -20,6 +22,7 @@ const showPokemons =() =>{
       <div class="text-name">
         <h3 class="pkm-name">${pkm["name"]}</h3>
         <p class="pkm-num">${pkm["type"][0]}</p>
+       
       </div>
       
   </div>
@@ -31,7 +34,6 @@ const showPokemons =() =>{
 
 const allCheck = document.querySelectorAll(".checkInput");
 for (btns of allCheck){
-console.log(btns)
 btns.addEventListener("click", function (e){let tipoPkm = e.target.id
 meusPokemons = meusPokemons.filter(pkms => (pkms["type"][0] == tipoPkm || pkms["type"][1] == tipoPkm))})
 }

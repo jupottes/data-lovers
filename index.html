@@ -15,48 +15,96 @@
     <img class="logo-name" src="imgs/pokemon.png">
   </nav>
 
-  <!--Seção área de busca e filtros-->
-  <header class="area-search">
-    <section class="nameSearch style-search">
-      <input type="text" id="myInput" placeholder="Buscar por nome" title="Type in a name">
-      <button class="button-search">Buscar</button>
-    </section>
-    <section class="numberSearch style-search">
-      <input type="text" id="myInput"  placeholder="Buscar por número" title="Type in a number">
-      <button class="button-search">Buscar</button>
-    </section>
-    <section class="typeSearch style-search" id="buscaPkm">
-      <input class="checkInput" type="checkbox" id="Fire" value="Fire" name="pokeType">FOGO
-      <input class="checkInput" type="checkbox" id="Grass" value="Grass" name="pokeType">GRAMA
-      <input class="checkInput" type="checkbox" id="Flying" value="Flying">VOADOR
-      <input class="checkInput" type="checkbox" id="Water" value="Water">ÁGUA
-      <input class="checkInput" type="checkbox" id="Normal" value="normal">NORMAL
-      <input class="checkInput" type="checkbox" id="Electric" value="eletric">ELÉTRICO
-      <input class="checkInput" type="checkbox" id="Ground" value="ground">TERRESTRE
-      <input  class="checkInput" type="checkbox" id="Fighting" value="fighting">LUTADOR
-      <input  class="checkInput" type="checkbox" id="Psychic" value="psychic">PSÍQUICO
-      <input  class="checkInput" type="checkbox" id="Rock" value="rock">PEDRA
-      <input  class="checkInput" type="checkbox" id="Ghost" value="ghost">FANTASMA
-      <input  class="checkInput" type="checkbox" id="Ice" value="ice">GELO
-      <input  class="checkInput" type="checkbox" id="Dragon" value="dragon">DRAGÃO
-      <input  class="checkInput" type="checkbox" id="Poison" value="dragon">VENENO
-  
-    </section>
-    <section class="eggSearch style-search">
-      <input type="text" id="myInputEgg"  placeholder="Buscar por Ovo" onkeyup="myFunction2()" title="Type in a egg">
-      <ul id="eggs" class="stylesearch">
-        <li><a id="0km" value="0km">0km</a></li>
-        <li><a id="2km" value="2km">2km</a></li>
-        <li><a id="5km" value="5km">5km</a></li>
-        <li><a id="10km" value="10km">10km</a></li>
-      </ul>
-    </section>
-  </header>
   <main>
-    <section id="pokemons-list">
-      <div id="pokemons-div" class="pokemons"></div>
-      <!--<div id="sorted-pokemons" class="pokemons"></div>-->
-    </section>
+
+    <!--Header da área de busca-->
+    <header class="area-search">
+
+      <section class="nameSearch style-search">
+        <input type="text" id="myInput" placeholder="Buscar por nome" title="Type in a name">
+        <button class="button-search">Buscar</button>
+      </section>
+
+      <section class="numberSearch style-search">
+        <input type="text" id="myInput" placeholder="Buscar por número" title="Type in a number">
+        <button class="button-search">Buscar</button>
+      </section>
+
+      <section class="pkmOrder style-order">
+        <select class="pkmSelectOrder" name="orderPkm" id="select">
+          <option value="Nome">Nome</option>
+          <option value="Type">Tipo</option>
+          <option value="Number">Número</option>
+          <option value="Egg">Ovo</option>
+        </select>
+        <button class="button-search">Ordenar</button>
+      </section>
+
+    </header>
+
+    <!--Header da filtros por checkbox-->
+    <header class="tittle-search">
+      <h4 class="tittle-search-type">Filtrar por Tipo</h4>
+      <h4 class="tittle-search-egg">Filtrar por Ovo</h4>
+    </header>
+
+    <header class="area-checkbox  style-font">
+
+      <section class="typeSearch style-search style-check" id="buscaPkm">
+        <div class="format-checks">
+          <input class="checkInput" type="checkbox" id="Fire" value="Fire" name="pokeType">FOGO
+          <input class="checkInput" type="checkbox" id="Water" value="Water">ÁGUA
+        </div>
+        <div class="format-checks">
+          <input class="checkInput" type="checkbox" id="Flying" value="Flying">VOADOR
+          <input class="checkInput" type="checkbox" id="Ground" value="Ground">TERRESTRE
+        </div>
+        <div class="format-checks">
+          <input class="checkInput" type="checkbox" id="Normal" value="Normal">NORMAL
+          <input class="checkInput" type="checkbox" id="Eletric" value="Eletric">ELÉTRICO
+        </div>
+        <div class="format-checks">
+          <input class="checkInput" type="checkbox" id="Fighting" value="Fighting">LUTADOR
+          <input class="checkInput" type="checkbox" id="Psychic" value="Psychic">PSÍQUICO
+        </div>
+        <div class="format-checks">
+          <input class="checkInput" type="checkbox" id="Rock" value="Rock">PEDRA
+          <input class="checkInput" type="checkbox" id="Grass" value="Grass">GRAMA
+        </div>
+        <div class="format-checks">
+          <input class="checkInput" type="checkbox" id="Ghost" value="Ghost">FANTASMA
+          <input class="checkInput" type="checkbox" id="Ice" value="Ice">GELO
+        </div>
+        <div class="format-checks">
+          <input class="checkInput" type="checkbox" id="Dragon" value="Dragon">DRAGÃO
+          <input class="checkInput" type="checkbox" id="Poison" value="Poison">VENENO
+        </div>
+        <div class="format-checks">
+          <input class="checkInput" type="checkbox" id="Bug" value="Bug">INSETO
+          <input class="checkInput" type="checkbox" id="Steel" value="Steel">FERRO
+        </div>
+      </section>
+
+      <section class="eggsSearch style-search style-check" id="searchEggPkm">
+        <div class="format-checks">
+          <input class="checkInputEgg" type="checkbox" id="km0" value="Not in Eggs">0 Km
+          <input class="checkInputEgg" type="checkbox" id="km2" value="2 km">2 Km
+        </div>
+        <div class="format-checks">
+          <input class="checkInputEgg" type="checkbox" id="km5" value="5 km">5 Km
+          <input class="checkInputEgg" type="checkbox" id="km10" value="10 km">10 Km
+        </div>
+      </section>
+
+    </header>
+    <header class="area-order">
+
+
+
+      <section id="pokemons-list">
+        <div id="pokemons-div" class="pokemons"></div>
+        <!--<div id="sorted-pokemons" class="pokemons"></div>-->
+      </section>
 
 
   </main>
