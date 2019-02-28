@@ -23,6 +23,95 @@
   width: 200px;
 }
 
+/*---------------SEARCH------------------*/
+* {
+  box-sizing: border-box;
+}
+
+#myInput {
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: none;
+  border-radius: 5px;
+}*/
+
+.types {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+/*---------------------------------------*/
+
+
+/*FORMATAÇÃO DOS CAMPOS DE BUSCA*/
+
+.tittle-search{
+ display: flex;
+ align-items: center;
+ margin-bottom: 0px;
+}
+
+.tittle-search-type{
+  align-self: flex-start;
+}
+
+.tittle-search-egg{
+  align-self: flex-end;
+}
+
+.area-search{
+  display: flex;
+  justify-content: space-around;
+  margin-top: 10px;
+}
+
+.style-search ul li a{
+  width: 300px;
+  border: 1px solid #ddd;
+  margin-top: -1px; /* Prevent double borders */
+  background-color: #f6f6f6;
+  padding: 12px;
+  text-decoration: none;
+  color: black;
+  display: block;
+  list-style-type: none;
+}
+
+.style-font{
+  font-size: 14px;
+}
+
+.style-check{
+  display: flex;
+}
+
+.format-checks{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+
+}
+
+.area-checkbox{
+  display: flex;
+  justify-content: space-around;
+  margin-top: 0px;
+  background-color: rgba(255, 255, 255, 0.486);
+  padding: 20px;
+}
+
+.checkInput{
+  width: 100px;
+}
+
+.checkInputEgg{
+  width: 100px;
+}
+
+/*---------------------------------------*/
+
+
+
 /*--------formatação geral do BODY--------*/
 body {
   width: 100%;
@@ -110,57 +199,3 @@ body {
 
 
 
-/*---------------SEARCH------------------*/
-* {
-  box-sizing: border-box;
-}
-
-#myInput {
-  font-size: 16px;
-  padding: 12px 20px 12px 40px;
-  border: none;
-  border-radius: 5px;
-}*/
-
-.types {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-}
-/*---------------------------------------*/
-
-
-
-
-/*FORMATAÇÃO DOS CAMPOS DE BUSCA*/
-
-.area-search{
-  display: flex;
-  justify-content: space-around;
-  margin-top: 10px;
-}
-
-.style-search ul li a{
-  width: 300px;
-  border: 1px solid #ddd;
-  margin-top: -1px; /* Prevent double borders */
-  background-color: #f6f6f6;
-  padding: 12px;
-  text-decoration: none;
-  font-size: 18px;
-  color: black;
-  display: block;
-  list-style-type: none;
- 
-}
-
-.style-inputs{
-  padding: 12px;
-  font-size: 18px;
-  margin-top: -1px; /* Prevent double borders */
-  border: none;
-  
-}
-
-
-/*---------------------------------------*/
