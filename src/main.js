@@ -10,6 +10,10 @@ let meusPokemons = getPokemons()
 
 
 
+
+
+
+
 const showPokemons =() =>{
   let pokemonList = document.getElementById("pokemons-div");
   pokemonList.innerHTML =`
@@ -46,15 +50,7 @@ const filterByType = () =>{
 //Seleciona todos os checkbox pelo id da section
 document.querySelector("#buscaPkm").addEventListener("click", filterByType)
 
-//Essa filtra pelo ovo
-//Distancia percorrida necessária para o pokemon nascer 
-//2, 5 ou 10km
-//Precisa ser refatorada pra ficar igual a do filtro
-/*const filterByEgg = () =>{
-meusPokemons = meusPokemons.filter(pkms => (pkms["egg"] == "2 km"));
-showPokemons()
-}*/
-
+//Função que filtra pela distância do ovo
 const checkEggValue = document.querySelectorAll(".checkInputEgg");
 for (btns of checkEggValue){
 btns.addEventListener("click", function (e){let eggDistance = e.target.id
@@ -67,3 +63,11 @@ const filterByEgg = () =>{
 
 document.querySelector("#searchEggPkm").addEventListener("click", filterByType)
 
+//Busca por nome no click do botão buscar por nome
+const filterByName = () =>{
+  let nomeDigitado = document.getElementById("entraNome").value;
+  meusPokemons = meusPokemons.filter(pkms => (pkms["name"].toUpperCase() == nomeDigitado.toUpperCase()))
+  showPokemons()
+}
+
+document.querySelector("#buscaNome").addEventListener("click", filterByName)
