@@ -50,7 +50,20 @@ document.querySelector("#buscaPkm").addEventListener("click", filterByType)
 //Distancia percorrida necessária para o pokemon nascer 
 //2, 5 ou 10km
 //Precisa ser refatorada pra ficar igual a do filtro
-const filterByEgg = () =>{
+/*const filterByEgg = () =>{
 meusPokemons = meusPokemons.filter(pkms => (pkms["egg"] == "2 km"));
 showPokemons()
+}*/
+
+const checkEggValue = document.querySelectorAll(".checkInputEgg");
+for (btns of checkEggValue){
+btns.addEventListener("click", function (e){let eggDistance = e.target.id
+meusPokemons = meusPokemons.filter(pkms => (pkms["egg"] == eggDistance))})
 }
+
+const filterByEgg = () =>{
+  showPokemons()
+}
+
+document.querySelector("#searchEggPkm").addEventListener("click", filterByType)
+
