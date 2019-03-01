@@ -8,12 +8,6 @@ const getPokemons =() => pokemons["pokemon"];
 //Sem ela os pokemons não são exibidos na tela
 let meusPokemons = getPokemons()
 
-
-
-
-
-
-
 const showPokemons =() =>{
   let pokemonList = document.getElementById("pokemons-div");
   pokemonList.innerHTML =`
@@ -71,3 +65,21 @@ const filterByName = () =>{
 }
 
 document.querySelector("#buscaNome").addEventListener("click", filterByName)
+
+
+//Ordenar Pokemons pelo nome A-Z
+const orderNameBelow = () =>{
+  let data2 = pokemons.pokemon;
+  data2 = (data2.sort ((a,b) => a.name.localeCompare(b.name)));
+  showPokemons()
+}
+document.querySelector("#buttonOrder").addEventListener("click", orderNameBelow)
+
+//Ordenar Pokemons pelo nome Z-A
+const orderName = () =>{
+  let data2 = pokemons.pokemon;
+  data2 = (data2.sort ((a,b) => a.name.localeCompare(b.name))).reverse(data2);
+  showPokemons()
+}
+document.querySelector("#buttonOrderReverse").addEventListener("click", orderName)
+
