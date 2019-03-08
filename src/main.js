@@ -1,85 +1,133 @@
-window.onload = function() {
-  showPokemons();
-
+window.onload = function () {
+  showPokemons(getPokemons);
 };
 
-const getPokemons =() => pokemons["pokemon"];
-//Essa variável vai "guardar" as mudanças aplicadas pelos filtros
-//Sem ela os pokemons não são exibidos na tela
-let meusPokemons = getPokemons()
+//Quando a página é executada é criado o template com os 151 pokeomons
+const getPokemons = POKEMONS['pokemon']
 
-const showPokemons =() =>{
-  let pokemonList = document.getElementById("pokemons-div");
-  pokemonList.innerHTML =`
-  ${meusPokemons.map((pkm) => `
+//Show pokemons sempre recebe algum parâmetro para ser executada
+//A partir do parâmetro recebido ela cria os templates
+function showPokemons(referencia) {
+  let pokemonList = document.getElementById('pokemons-div');
+  pokemonList.innerHTML = `
+  ${referencia.map((pkm) => `
     <div class="pkm-item">
-      <img src="${pkm["img"]}" class="pkm-img" />
-      <div class="text-price">
-        <p class="pkm-num">${pkm["num"]}</p>
+      <img src="${pkm['img']}" class="pkm-img" />
+    <div class="text-price">
+        <p class="pkm-num">${pkm['num']}</p>
       </div>
       <div class="text-name">
-        <h3 class="pkm-name">${pkm["name"]}</h3>
-        <p class="pkm-num">${pkm["type"][0]}</p>
+        <h3 class="pkm-name">${pkm['name']}</h3>
+        <p class="pkm-num">${pkm['type']}</p>
        
       </div>
       
   </div>
   `
-  ).join("")
-  }
-  ` 
+  )
+      .join('')}
+  `;
 }
 
-const allCheck = document.querySelectorAll(".checkInput");
-for (btns of allCheck){
-btns.addEventListener("click", function (e){let tipoPkm = e.target.id
-meusPokemons = meusPokemons.filter(pkms => (pkms["type"][0] == tipoPkm || pkms["type"][1] == tipoPkm))})
+//Buscar pelo nome
+function filterByName() {
+  let nomeDigitado = document.getElementById('entraNome').value;
+  let data1 = getPokemons.filter((pkms) => pkms['name'].toUpperCase() === nomeDigitado.toUpperCase());
+ if (data1.length ==0){
+  let pokemonList = document.getElementById('pokemons-div');
+  pokemonList.innerHTML = `
+        <p class="pkm-num">Nenhum resultado encontrado</p>`
+ }
+ else{
+   showPokemons(data1)
+ }
 }
 
-//Função que mandar mostrar os pokemons quando o filtro é aplicado
-const filterByType = () =>{
-  showPokemons()
-}
-
-//Seleciona todos os checkbox pelo id da section
-document.querySelector("#buscaPkm").addEventListener("click", filterByType)
-
-//Função que filtra pela distância do ovo
-const checkEggValue = document.querySelectorAll(".checkInputEgg");
-for (btns of checkEggValue){
-btns.addEventListener("click", function (e){let eggDistance = e.target.id
-meusPokemons = meusPokemons.filter(pkms => (pkms["egg"] == eggDistance))})
-}
-
-const filterByEgg = () =>{
-  showPokemons()
-}
-
-document.querySelector("#searchEggPkm").addEventListener("click", filterByType)
-
-//Busca por nome no click do botão buscar por nome
-const filterByName = () =>{
-  let nomeDigitado = document.getElementById("entraNome").value;
-  meusPokemons = meusPokemons.filter(pkms => (pkms["name"].toUpperCase() == nomeDigitado.toUpperCase()))
-  showPokemons()
-}
-
-document.querySelector("#buscaNome").addEventListener("click", filterByName)
-
+document.querySelector('#buscaNome').addEventListener('click', filterByName)
 
 //Ordenar Pokemons pelo nome A-Z
-const orderNameBelow = () =>{
-  let data2 = pokemons.pokemon;
-  data2 = (data2.sort ((a,b) => a.name.localeCompare(b.name)));
-  showPokemons()
-}
-document.querySelector("#buttonOrder").addEventListener("click", orderNameBelow)
+const orderNameBelow = () => {
+  getPokemons.sort((a, b) => a.name.localeCompare(b.name));
+  showPokemons(getPokemons);
+};
+document.querySelector('#buttonOrder').addEventListener('click', orderNameBelow);
 
 //Ordenar Pokemons pelo nome Z-A
-const orderName = () =>{
-  let data2 = pokemons.pokemon;
-  data2 = (data2.sort ((a,b) => a.name.localeCompare(b.name))).reverse(data2);
-  showPokemons()
-}
-document.querySelector("#buttonOrderReverse").addEventListener("click", orderName)
+const orderName = () => {
+  getPokemons.sort((a, b) => a.name.localeCompare(b.name)).reverse(getPokemons);
+  showPokemons(getPokemons);
+};
+document.querySelector('#buttonOrderReverse').addEventListener('click', orderName);
 
+//Mostra os pokemons de acordo com o tipo selecionado
+function filterByType() {
+  let pokemonTipo = document.getElementById('tipos').value;
+  let result = getPokemons.filter((pkms) => pkms['type'][0] == pokemonTipo || pkms['type'][1] == pokemonTipo);
+  if (result.length ==0){
+    let pokemonList = document.getElementById('pokemons-div');
+    pokemonList.innerHTML = `
+          <p class="pkm-num">Nenhum resultado encontrado</p>`
+   }
+   else{
+     showPokemons(result)
+   }
+}
+
+document.querySelector('#searchByType').addEventListener('click', filterByType)
+
+//Função que guarda os nomes em ordem alfabética
+function getNames() {
+  const nomes = getPokemons.sort((a, b) => a.name.localeCompare(b.name));
+  const nomesOrganizados = nomes.map((pkms) => pkms['name']);
+  return nomesOrganizados;
+}
+
+//Cria os itens do menu dinamicamente
+function loadNames() {
+  let options = '';
+  for (var i = 0; i < getNames().length; i++) options += '<option value="' + getNames()[i] + '" />';
+
+  document.getElementById('nameList').innerHTML = options;
+}
+
+//Guarda os números de cada pokemon
+function getNumbers() {
+  const sortedNumbers = getPokemons.map((pkms) => pkms['num']);
+  return sortedNumbers;
+}
+
+//Carrega os números na barra de pesquisa
+function loadNumbers() {
+  let nameOptions = '';
+  for (var i = 0; i < getNumbers().length; i++) nameOptions += '<option value="' + getNumbers()[i] + '" />';
+
+  document.getElementById('numberList').innerHTML = nameOptions;
+}
+
+document.querySelector('#buscaNumero').addEventListener('click', compararNumeros);
+
+//Verifica o número digitado e mostra o pokemon com aquele número
+function compararNumeros() {
+  let numeroDigitado = Number(document.getElementById('entraNumero').value);
+  let data4 = getPokemons.filter((pkms) => Number(pkms['num']) == numeroDigitado);
+  if (data4.length ==0){
+    let pokemonList = document.getElementById('pokemons-div');
+    pokemonList.innerHTML = `
+          <p class="pkm-num">Nenhum resultado encontrado</p>`
+   }
+   else{
+     showPokemons(data4)
+   }
+}
+
+//Evento para carregar os menus ao entrar na página
+window.addEventListener('load', loadNumbers);
+window.addEventListener('load', loadNames);
+
+//Cálculos de comparação utilizando reduce
+/*var sum = rockets.reduce( function( prevVal, elem ) {
+  return prevVal + elem.launches;
+}, 0 );
+*/
+// ES6
+// rockets.reduce( ( prevVal, elem ) => prevVal + elem.launches, 0 ); 

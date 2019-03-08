@@ -28,12 +28,19 @@
   box-sizing: border-box;
 }
 
-#myInput {
+#numberPkm {
   font-size: 16px;
   padding: 12px 20px 12px 40px;
   border: none;
   border-radius: 5px;
-}*/
+}
+
+.myInput {
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: none;
+  border-radius: 10px;
+}
 
 .types {
   list-style-type: none;
@@ -62,7 +69,9 @@
 .area-search{
   display: flex;
   justify-content: space-around;
-  margin-top: 10px;
+  /* background-color: rgba(255, 255, 255, 0.486); */
+  padding-top: 1%;
+  padding-bottom: 2%;
 }
 
 .style-search ul li a{
@@ -77,35 +86,33 @@
   list-style-type: none;
 }
 
-.style-font{
-  font-size: 14px;
+/*--------formatação BOTÕES DE FILTRO TIPO--------*/
+
+.area-buttons{
+  /* background-color: rgba(255, 255, 255, 0.486); */
+  padding-top: 1%;
+  padding-bottom: 2%;
+  width: 100%;
 }
 
-.style-check{
-  display: flex;
-}
-
-.format-checks{
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-
-}
-
-.area-checkbox{
+.buttons-types{
   display: flex;
   justify-content: space-around;
   margin-top: 0px;
-  background-color: rgba(255, 255, 255, 0.486);
-  padding: 20px;
 }
 
-.checkInput{
-  width: 100px;
-}
-
-.checkInputEgg{
-  width: 100px;
+.button-type{
+  font-size: 15px;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-top: 1%;
+  border: none;
+  border-radius: 10px;
+  background-color: rgb(236, 240, 2);
+  color: rgb(17, 3, 92);
+  cursor: pointer;
+  outline: none;
+  padding: 5px 15px;
 }
 
 /*---------------------------------------*/
@@ -147,6 +154,8 @@ body {
   cursor: no-drop;
   color: #f2f2f2;
 }
+
+
 /*---------------------------------------*/
 
 
@@ -161,7 +170,7 @@ body {
 }
 
 /*formatação CARD dos pokemons*/
-.pkm-item {
+.pkm-item{
   background-color: rgba(255, 255, 255, 0.87);
   border-radius: 15px;
   width: 25%;
@@ -174,12 +183,12 @@ body {
 }
 
 /*formatação imagem dos pokemons*/
-.pkm-img {
+.pkm-img{
   width: 70%;
 }
 
 /*formatação nomes dos pokemons*/
-.pkm-name {
+.pkm-name{
   text-align: center;
   margin: auto;
   font-size: 1rem;
@@ -188,7 +197,7 @@ body {
 }
 
 /*formatação numeros dos pokemons*/
-.pkm-num {
+.pkm-num{
   text-align: center;
   margin: auto;
   width: 70%;
