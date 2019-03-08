@@ -7,106 +7,67 @@
   <title>Pokemon</title>
   <link href="https://fonts.googleapis.com/css?family=Niramit|Pacifico" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="src/style.css">
+  <link rel="icon" href="imgs/pokeball-png-45330.png">
 </head>
 
 <body>
   <!--Menu superior-->
   <nav class="menu-top">
-    <img class="logo-name" src="imgs/pokemon.png">
+    <a href="file:///C:/Users/user/Desktop/data-lovers/index.html"><img class="logo-name" src="imgs/pokemon.png"></a>
   </nav>
 
   <main>
 
-    <!--Header da área de busca-->
+    <!--Header da área de busca 1-->
     <header class="area-search">
 
       <section class="nameSearch style-search">
-        <input type="text" id="entraNome" placeholder="Buscar por nome" title="Type in a name">
+        <input type="text" class="myInput" list="nameList" placeholder="Buscar por nome" title="Escolha pelo nome" id="entraNome">
+        <datalist id="nameList"></datalist>
         <button class="button-search" id="buscaNome">Buscar</button>
       </section>
 
       <section class="numberSearch style-search">
-        <input type="text" id="myInput" placeholder="Buscar por número" title="Type in a number">
-        <button class="button-search">Buscar</button>
+        <input type="number" list="numberList" class="myInput" placeholder="Buscar por Número" title="Escolha pelo número"
+          id="entraNumero">
+        <datalist id=numberList></datalist>
+        <button class="button-search" id="buscaNumero">Buscar</button>
       </section>
 
-      <section class="pkmOrder style-order">
-        <select class="pkmSelectOrder" name="orderPkm" id="select">
-          <option value=""></option>
-          <option id="nameOrder" value="Nome">Nome</option>
-          <option value="Type">Tipo</option>
-          <option value="Number">Número</option>
-          <option value="Egg">Ovo</option>
-        </select>
-        <button id="buttonOrder" class="button-search">Ordenar A-Z</button>
-        <button id="buttonOrderReverse" class="button-search">Ordenar Z-A</button>
+      <section>
+        <input type="text" id="tipos" class="myInput" list="select" placeholder="Filtrar por tipo" title="Filtre pelo Tipo">
+        <datalist class="pkmSelectOrder" name="orderPkm" id="select">
+          <option value="Water">ÁGUA</option>
+          <option value="Electric">ELÉTRICO</option>
+          <option value="Ghost">FANTASMA</option>
+          <option value="Fire">FOGO</option>
+          <option value="Dragon">DRAGÃO</option>
+          <option value="Ice">GELO</option>
+          <option value="Grass">GRAMA</option>
+          <option value="Bug">INSETO</option>
+          <option value="Fighting">LUTADOR</option>
+          <option value="Normal">NORMAL</option>
+          <option value="Rock">PEDRA</option>
+          <option value="Psychic">PSÍQUICO</option>
+          <option value="Flying">VOADOR</option>
+          <option value="Ground">TERRESTRE</option>
+          <option value="Poison">VENENO</option>
+        </datalist>
       </section>
 
+      <button id="searchByType" class="button-search">Filtrar</button>
+      <button id="buttonOrder" class="button-search">Ordenar A-Z</button>
+      <button id="buttonOrderReverse" class="button-search">Ordenar Z-A</button>
     </header>
 
-    <!--Header da filtros por checkbox-->
-    <header class="tittle-search">
-      <h4 class="tittle-search-type">Filtrar por Tipo</h4>
-      <h4 class="tittle-search-egg">Filtrar por Ovo</h4>
-    </header>
 
-    <header class="area-checkbox  style-font">
-      
-      <section class="typeSearch style-search style-check" id="buscaPkm">
-        <div class="format-checks">
-          <input class="checkInput" type="checkbox" id="Fire" value="Fire" name="pokeType">FOGO
-          <input class="checkInput" type="checkbox" id="Water" value="Water">ÁGUA
-        </div>
-        <div class="format-checks">
-          <input class="checkInput" type="checkbox" id="Flying" value="Flying">VOADOR
-          <input class="checkInput" type="checkbox" id="Ground" value="Ground">TERRESTRE
-        </div>
-        <div class="format-checks">
-          <input class="checkInput" type="checkbox" id="Normal" value="Normal">NORMAL
-          <input class="checkInput" type="checkbox" id="Eletric" value="Eletric">ELÉTRICO
-        </div>
-        <div class="format-checks">
-          <input class="checkInput" type="checkbox" id="Fighting" value="Fighting">LUTADOR
-          <input class="checkInput" type="checkbox" id="Psychic" value="Psychic">PSÍQUICO
-        </div>
-        <div class="format-checks">
-          <input class="checkInput" type="checkbox" id="Rock" value="Rock">PEDRA
-          <input class="checkInput" type="checkbox" id="Grass" value="Grass">GRAMA
-        </div>
-        <div class="format-checks">
-          <input class="checkInput" type="checkbox" id="Ghost" value="Ghost">FANTASMA
-          <input class="checkInput" type="checkbox" id="Ice" value="Ice">GELO
-        </div>
-        <div class="format-checks">
-          <input class="checkInput" type="checkbox" id="Dragon" value="Dragon">DRAGÃO
-          <input class="checkInput" type="checkbox" id="Poison" value="Poison">VENENO
-        </div>
-        <div class="format-checks">
-          <input class="checkInput" type="checkbox" id="Bug" value="Bug">INSETO
-        </div>
-      </section>
-
-      <section class="eggsSearch style-search style-check" id="searchEggPkm">
-        <div class="format-checks">
-          <input class="checkInputEgg" type="checkbox"  id="Not in Eggs">0 Km
-          <input class="checkInputEgg" type="checkbox" id="2 km">2 Km
-        </div>
-        <div class="format-checks">
-          <input class="checkInputEgg" type="checkbox" id="5 km">5 Km
-          <input class="checkInputEgg" type="checkbox" id="10 km">10 Km
-        </div>
-      </section>
-
-    </header>
     <header class="area-order">
-
-
 
       <section id="pokemons-list">
         <div id="pokemons-div" class="pokemons"></div>
         <!--<div id="sorted-pokemons" class="pokemons"></div>-->
       </section>
-
+    </header>
 
   </main>
 
