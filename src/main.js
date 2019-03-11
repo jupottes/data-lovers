@@ -36,7 +36,7 @@ function filterByName() {
  if (data1.length ==0){
   let pokemonList = document.getElementById('pokemons-div');
   pokemonList.innerHTML = `
-        <p class="pkm-num">Nenhum resultado encontrado</p>`
+        <p class="pkm-num">Nenhum resultado encontrado</p>${showPokemons(result)}`
  }
  else{
    showPokemons(data1)
@@ -46,34 +46,55 @@ function filterByName() {
 document.querySelector('#buscaNome').addEventListener('click', filterByName)
 
 //Ordenar Pokemons pelo nome A-Z
-const orderNameBelow = () => {
-  getPokemons.sort((a, b) => a.name.localeCompare(b.name));
-  showPokemons(getPokemons);
+//Nessa const pokemons é feito um if-else, se não tiver nenhum filtro aplicado
+//são mostrados todos os pokemons
+function sortNames(){
+  const filteredPokemons = filterByType();
+  const pokemons = (filteredPokemons.length != 0) ? filteredPokemons : getPokemons;
+  pokemons.sort((a, b) => a.name.localeCompare(b.name));
+  showPokemons(pokemons);
 };
-document.querySelector('#buttonOrder').addEventListener('click', orderNameBelow);
+document.querySelector('#buttonOrder').addEventListener('click', sortNames);
 
 //Ordenar Pokemons pelo nome Z-A
-const orderName = () => {
-  getPokemons.sort((a, b) => a.name.localeCompare(b.name)).reverse(getPokemons);
-  showPokemons(getPokemons);
+function sortNamesReverse(){
+  const filteredPokemons = filterByType();
+  const pokemons = (filteredPokemons.length != 0) ? filteredPokemons : getPokemons;
+  pokemons.sort((a, b) => a.name.localeCompare(b.name)).reverse(getPokemons);
+  showPokemons(pokemons);
 };
-document.querySelector('#buttonOrderReverse').addEventListener('click', orderName);
+document.querySelector('#buttonOrderReverse').addEventListener('click', sortNamesReverse);
 
-//Mostra os pokemons de acordo com o tipo selecionado
-function filterByType() {
+//Mostra a porcentagem dos pokemons de acordo com o tipo
+function porcentagem() {
   let pokemonTipo = document.getElementById('tipos').value;
   let result = getPokemons.filter((pkms) => pkms['type'][0] == pokemonTipo || pkms['type'][1] == pokemonTipo);
-  if (result.length ==0){
-    let pokemonList = document.getElementById('pokemons-div');
-    pokemonList.innerHTML = `
-          <p class="pkm-num">Nenhum resultado encontrado</p>`
-   }
-   else{
-     showPokemons(result)
-   }
+  let pokemonList = document.getElementById('mensagem');
+if(result.length > 0){   
+  let contador = (result.length / 151) * 100
+  return `${pokemonList.innerHTML = "Entre os 151 pokemons " + contador.toFixed(2) + "% são do tipo " + pokemonTipo}`;  
+}
+else{
+  pokemonList.innerHTML = `
+        <p class="pkm-num">Nenhum resultado encontrado</p>`
+}
+}
+ 
+//Mostra os templates de acordo com o filtro escolhido
+function filterByType(){
+  let pokemonTipo = document.getElementById('tipos').value;
+  let result = getPokemons.filter((pkms) => pkms['type'][0] == pokemonTipo || pkms['type'][1] == pokemonTipo);
+  return result
 }
 
-document.querySelector('#searchByType').addEventListener('click', filterByType)
+//Chama as funções para exibir a mensagem mais os pokemons filtrados
+function showFilterResult(){
+  porcentagem()
+  showPokemons(filterByType())
+}
+
+let filtrar = document.getElementById('searchByType')
+filtrar.addEventListener('click', showFilterResult)
 
 //Função que guarda os nomes em ordem alfabética
 function getNames() {
@@ -124,10 +145,13 @@ function compararNumeros() {
 window.addEventListener('load', loadNumbers);
 window.addEventListener('load', loadNames);
 
-//Cálculos de comparação utilizando reduce
-/*var sum = rockets.reduce( function( prevVal, elem ) {
-  return prevVal + elem.launches;
-}, 0 );
-*/
-// ES6
-// rockets.reduce( ( prevVal, elem ) => prevVal + elem.launches, 0 ); 
+//Função pra limpar a porcentagem que aparece ao filtrar por tipo
+function clear(){
+  document.getElementById('mensagem').innerHTML=''
+}
+
+//Loop que adiciona a função de limpar nos botões
+let buttons = document.getElementsByClassName('button-search')
+for (let i in buttons) {
+  buttons[i].addEventListener('click', clear);
+}
