@@ -8,7 +8,7 @@ const getPokemons = POKEMONS['pokemon']
 //Show pokemons sempre recebe algum parâmetro para ser executada
 //A partir do parâmetro recebido ela cria os templates
 function showPokemons(reference) {
-  let pokemonList = document.getElementById('cardsPokemons');
+  const pokemonList = document.getElementById('cardsPokemons');
   pokemonList.innerHTML = `
   ${reference.map((pkm) => `
     <div class="pkm-item">
@@ -31,10 +31,10 @@ function showPokemons(reference) {
 
 //Buscar pelo nome
 function filterByName() {
-  let typedName = document.getElementById('enterName').value;
-  let nameComp = getPokemons.filter((pkms) => pkms['name'].toUpperCase() === typedName.toUpperCase());
+  const typedName = document.getElementById('enterName').value;
+  const nameComp = getPokemons.filter((pkms) => pkms['name'].toUpperCase() === typedName.toUpperCase());
  if (nameComp.length ==0){
-  let pokemonList = document.getElementById('cardsPokemons');
+  const pokemonList = document.getElementById('cardsPokemons');
   pokemonList.innerHTML = `
         <p class="pkm-num">Nenhum resultado encontrado</p>`
  }
@@ -67,12 +67,12 @@ document.querySelector('#buttonOrderReverse').addEventListener('click', sortName
 
 //Mostra as estatisticas dos pokemons de acordo com o tipo
 function statistic() {
-  let pokeType = document.getElementById('typeList').value;
-  let result = getPokemons.filter((pkms) => pkms['type'][0] == pokeType || pkms['type'][1] == pokeType);
-  let pokemonList = document.getElementById('typeStatistics');
+  const pokeType = document.getElementById('typeList').value;
+  const result = getPokemons.filter((pkms) => pkms['type'][0] == pokeType || pkms['type'][1] == pokeType);
+  const pokemonList = document.getElementById('typeStatistics');
 if(result.length > 0){   
-  let contador = (result.length / 151) * 100
-  return `${pokemonList.innerHTML = "Entre os 151 pokemons " + contador.toFixed(2) + "% são do tipo " + pokeType}`;  
+  const counter = (result.length / 151) * 100
+  return `${pokemonList.innerHTML = "Entre os 151 pokemons " + counter.toFixed(2) + "% são do tipo " + pokeType}`;  
 }
 else{
   pokemonList.innerHTML = `
@@ -93,8 +93,7 @@ function showFilterResult(){
   showPokemons(filterByType())
 }
 
-const filter = document.getElementById('searchByType')
-filter.addEventListener('click', showFilterResult)
+document.querySelector('#searchByType').addEventListener('click', showFilterResult)
 
 //Função que guarda os nomes em ordem alfabética
 function getNames() {
@@ -107,7 +106,6 @@ function getNames() {
 function loadNames() {
   let options = '';
   for (let i in getNames()) options += '<option value="' + getNames()[i] + '" />';
-
   document.getElementById('nameList').innerHTML = options;
 }
 
@@ -121,7 +119,6 @@ function getNumbers() {
 function loadNumbers() {
   let nameOptions = '';
   for (let i in getNumbers()) nameOptions += '<option value="' + getNumbers()[i] + '" />';
-
   document.getElementById('numberList').innerHTML = nameOptions;
 }
 
@@ -129,10 +126,10 @@ document.querySelector('#searchNumber').addEventListener('click', compareNumber)
 
 //Verifica o número digitado e mostra o pokemon com aquele número
 function compareNumber() {
-  let typedNumber = Number(document.getElementById('enterNumber').value);
-  let numberComp = getPokemons.filter((pkms) => Number(pkms['num']) == typedNumber);
+  const typedNumber = Number(document.getElementById('enterNumber').value);
+  const numberComp = getPokemons.filter((pkms) => Number(pkms['num']) == typedNumber);
   if (numberComp.length ==0){
-    let pokemonList = document.getElementById('cardsPokemons');
+    const pokemonList = document.getElementById('cardsPokemons');
     pokemonList.innerHTML = `
           <p class="pkm-num">Nenhum resultado encontrado</p>`
    }
