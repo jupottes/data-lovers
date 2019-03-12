@@ -148,7 +148,7 @@ function clear(){
 }
 
 //Loop que adiciona a função de limpar nos botões
-let buttons = document.getElementsByClassName('button-search')
+const buttons = document.getElementsByClassName('button-search')
 for (let i in buttons) {
   buttons[i].addEventListener('click', clear);
 }
