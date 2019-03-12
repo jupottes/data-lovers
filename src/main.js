@@ -7,10 +7,10 @@ const getPokemons = POKEMONS['pokemon']
 
 //Show pokemons sempre recebe algum parâmetro para ser executada
 //A partir do parâmetro recebido ela cria os templates
-function showPokemons(referencia) {
-  let pokemonList = document.getElementById('pokemons-div');
+function showPokemons(reference) {
+  let pokemonList = document.getElementById('cardsPokemons');
   pokemonList.innerHTML = `
-  ${referencia.map((pkm) => `
+  ${reference.map((pkm) => `
     <div class="pkm-item">
       <img src="${pkm['img']}" class="pkm-img" />
     <div class="text-price">
@@ -31,15 +31,15 @@ function showPokemons(referencia) {
 
 //Buscar pelo nome
 function filterByName() {
-  let nomeDigitado = document.getElementById('entraNome').value;
-  let data1 = getPokemons.filter((pkms) => pkms['name'].toUpperCase() === nomeDigitado.toUpperCase());
- if (data1.length ==0){
-  let pokemonList = document.getElementById('pokemons-div');
+  let typedName = document.getElementById('enterName').value;
+  let nameComp = getPokemons.filter((pkms) => pkms['name'].toUpperCase() === typedName.toUpperCase());
+ if (nameComp.length ==0){
+  let pokemonList = document.getElementById('cardsPokemons');
   pokemonList.innerHTML = `
-        <p class="pkm-num">Nenhum resultado encontrado</p>${showPokemons(result)}`
+        <p class="pkm-num">Nenhum resultado encontrado</p>`
  }
  else{
-   showPokemons(data1)
+   showPokemons(nameComp)
  }
 }
 
@@ -65,48 +65,48 @@ function sortNamesReverse(){
 };
 document.querySelector('#buttonOrderReverse').addEventListener('click', sortNamesReverse);
 
-//Mostra a porcentagem dos pokemons de acordo com o tipo
-function porcentagem() {
-  let pokemonTipo = document.getElementById('tipos').value;
-  let result = getPokemons.filter((pkms) => pkms['type'][0] == pokemonTipo || pkms['type'][1] == pokemonTipo);
-  let pokemonList = document.getElementById('mensagem');
+//Mostra as estatisticas dos pokemons de acordo com o tipo
+function statistic() {
+  let pokeType = document.getElementById('typeList').value;
+  let result = getPokemons.filter((pkms) => pkms['type'][0] == pokeType || pkms['type'][1] == pokeType);
+  let pokemonList = document.getElementById('typeStatistics');
 if(result.length > 0){   
   let contador = (result.length / 151) * 100
-  return `${pokemonList.innerHTML = "Entre os 151 pokemons " + contador.toFixed(2) + "% são do tipo " + pokemonTipo}`;  
+  return `${pokemonList.innerHTML = "Entre os 151 pokemons " + contador.toFixed(2) + "% são do tipo " + pokeType}`;  
 }
 else{
   pokemonList.innerHTML = `
         <p class="pkm-num">Nenhum resultado encontrado</p>`
 }
 }
- 
+
 //Mostra os templates de acordo com o filtro escolhido
 function filterByType(){
-  let pokemonTipo = document.getElementById('tipos').value;
-  let result = getPokemons.filter((pkms) => pkms['type'][0] == pokemonTipo || pkms['type'][1] == pokemonTipo);
+  const pokemonTipo = document.getElementById('typeList').value;
+  const result = getPokemons.filter((pkms) => pkms['type'][0] == pokemonTipo || pkms['type'][1] == pokemonTipo);
   return result
 }
 
 //Chama as funções para exibir a mensagem mais os pokemons filtrados
 function showFilterResult(){
-  porcentagem()
+  statistic()
   showPokemons(filterByType())
 }
 
-let filtrar = document.getElementById('searchByType')
-filtrar.addEventListener('click', showFilterResult)
+const filter = document.getElementById('searchByType')
+filter.addEventListener('click', showFilterResult)
 
 //Função que guarda os nomes em ordem alfabética
 function getNames() {
-  const nomes = getPokemons.sort((a, b) => a.name.localeCompare(b.name));
-  const nomesOrganizados = nomes.map((pkms) => pkms['name']);
-  return nomesOrganizados;
+  const names = getPokemons.sort((a, b) => a.name.localeCompare(b.name));
+  const orderedNames = names.map((pkms) => pkms['name']);
+  return orderedNames;
 }
 
 //Cria os itens do menu dinamicamente
 function loadNames() {
   let options = '';
-  for (var i = 0; i < getNames().length; i++) options += '<option value="' + getNames()[i] + '" />';
+  for (let i in getNames()) options += '<option value="' + getNames()[i] + '" />';
 
   document.getElementById('nameList').innerHTML = options;
 }
@@ -120,24 +120,24 @@ function getNumbers() {
 //Carrega os números na barra de pesquisa
 function loadNumbers() {
   let nameOptions = '';
-  for (var i = 0; i < getNumbers().length; i++) nameOptions += '<option value="' + getNumbers()[i] + '" />';
+  for (let i in getNumbers()) nameOptions += '<option value="' + getNumbers()[i] + '" />';
 
   document.getElementById('numberList').innerHTML = nameOptions;
 }
 
-document.querySelector('#buscaNumero').addEventListener('click', compararNumeros);
+document.querySelector('#searchNumber').addEventListener('click', compareNumber);
 
 //Verifica o número digitado e mostra o pokemon com aquele número
-function compararNumeros() {
-  let numeroDigitado = Number(document.getElementById('entraNumero').value);
-  let data4 = getPokemons.filter((pkms) => Number(pkms['num']) == numeroDigitado);
-  if (data4.length ==0){
-    let pokemonList = document.getElementById('pokemons-div');
+function compareNumber() {
+  let typedNumber = Number(document.getElementById('enterNumber').value);
+  let numberComp = getPokemons.filter((pkms) => Number(pkms['num']) == typedNumber);
+  if (numberComp.length ==0){
+    let pokemonList = document.getElementById('cardsPokemons');
     pokemonList.innerHTML = `
           <p class="pkm-num">Nenhum resultado encontrado</p>`
    }
    else{
-     showPokemons(data4)
+     showPokemons(numberComp)
    }
 }
 
@@ -145,9 +145,9 @@ function compararNumeros() {
 window.addEventListener('load', loadNumbers);
 window.addEventListener('load', loadNames);
 
-//Função pra limpar a porcentagem que aparece ao filtrar por tipo
+//Função pra limpar a statistic que aparece ao filtrar por tipo
 function clear(){
-  document.getElementById('mensagem').innerHTML=''
+  document.getElementById('typeStatistics').innerHTML=''
 }
 
 //Loop que adiciona a função de limpar nos botões

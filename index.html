@@ -13,7 +13,7 @@
 <body>
   <!--Menu superior-->
   <nav class="menu-top">
-    <a href="file:///C:/Users/user/Desktop/data-lovers/index.html"><img class="logo-name" src="imgs/pokemon.png"></a>
+    <a href="index.html"><img class="logo-name" alt="Logo do pokemon" src="imgs/pokemon.png"></a>
   </nav>
 
   <main>
@@ -22,21 +22,21 @@
     <header class="area-search">
 
       <section class="nameSearch style-search">
-        <input type="text" class="myInput" list="nameList" placeholder="Buscar por nome" title="Escolha pelo nome" id="entraNome">
+        <input type="text" class="search-field" list="nameList" placeholder="Buscar por nome" title="Escolha e clique em buscar" id="enterName">
         <datalist id="nameList"></datalist>
         <button class="button-search" id="buscaNome">Buscar</button>
       </section>
 
       <section class="numberSearch style-search">
-        <input type="number" list="numberList" class="myInput" placeholder="Buscar por Número" title="Escolha pelo número"
-          id="entraNumero">
+        <input type="number" list="numberList" class="search-field" placeholder="Buscar por Número" title="Escolha e clique em buscar"
+          id="enterNumber">
         <datalist id=numberList></datalist>
-        <button class="button-search" id="buscaNumero">Buscar</button>
+        <button class="button-search" id="searchNumber">Buscar</button>
       </section>
 
       <section>
-        <input type="text" id="tipos" class="myInput" list="select" placeholder="Filtrar por tipo" title="Filtre pelo Tipo">
-        <datalist class="pkmSelectOrder" name="orderPkm" id="select">
+        <input type="text" id="typeList" class="search-field" list="select" placeholder="Filtrar por tipo" title="Escolha e clique em filtrar">
+        <datalist class="pkmSelectOrder" id="select">
           <option value="Water">ÁGUA</option>
           <option value="Electric">ELÉTRICO</option>
           <option value="Ghost">FANTASMA</option>
@@ -55,7 +55,7 @@
         </datalist>
       </section>
 
-      <button id="searchByType" class="button-searchs">Filtrar</button>
+      <button id="searchByType" class="button-filter">Filtrar</button>
       <button id="buttonOrder" class="button-search">Ordenar A-Z</button>
       <button id="buttonOrderReverse" class="button-search">Ordenar Z-A</button>
     </header>
@@ -64,21 +64,15 @@
     <header class="area-order">
 
       <section id="pokemons-list">
-        <div id="mensagem" class="pokemons"></div>
-        <div id="pokemons-div" class="pokemons"></div>
-        <!--<div id="sorted-pokemons" class="pokemons"></div>-->
+        <div id="typeStatistics" class="pokemons"></div>
+        <div id="cardsPokemons" class="pokemons"></div>
       </section>
     </header>
 
   </main>
 
-  <section id="pokemons-list">
-    <div id="pokemons-div" class="pokemons"></div>
-    <!--<div id="sorted-pokemons" class="pokemons"></div>-->
-  </section>
-
-  <script type="text/javascript" src="src/data/pokemon/pokemon.js"></script>
-  <script type="text/javascript" src="src/main.js"></script>
+  <script src="src/data/pokemon/pokemon.js"></script>
+  <script src="src/main.js"></script>
 </body>
 
 </html>
