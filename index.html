@@ -11,31 +11,30 @@
 </head>
 
 <body>
-  <!--Menu superior-->
+
   <nav class="menu-top">
     <a href="index.html"><img class="logo-name" alt="Logo do pokemon" src="imgs/pokemon.png"></a>
   </nav>
 
   <main>
-
-    <!--Header da área de busca 1-->
     <header class="area-search">
-
       <section class="nameSearch style-search">
-        <input type="text" class="search-field" list="nameList" placeholder="Buscar por nome" title="Escolha e clique em buscar" id="enterName">
+        <input type="text" class="search-field" list="nameList" placeholder="Buscar por nome"
+          title="Escolha e clique em buscar" id="enterName">
         <datalist id="nameList"></datalist>
         <button class="button-search" id="buscaNome">Buscar</button>
       </section>
 
       <section class="numberSearch style-search">
-        <input type="number" list="numberList" class="search-field" placeholder="Buscar por Número" title="Escolha e clique em buscar"
-          id="enterNumber">
+        <input type="number" list="numberList" class="search-field" placeholder="Buscar por Número"
+          title="Escolha e clique em buscar" id="enterNumber">
         <datalist id=numberList></datalist>
         <button class="button-search" id="searchNumber">Buscar</button>
       </section>
 
       <section>
-        <input type="text" id="typeList" class="search-field" list="select" placeholder="Filtrar por tipo" title="Escolha e clique em filtrar">
+        <input type="text" id="typeList" class="search-field" list="select" placeholder="Filtrar por tipo"
+          title="Escolha e clique em filtrar">
         <datalist class="pkmSelectOrder" id="select">
           <option value="Water">ÁGUA</option>
           <option value="Electric">ELÉTRICO</option>
@@ -60,7 +59,6 @@
       <button id="buttonOrderReverse" class="button-search">Ordenar Z-A</button>
     </header>
 
-
     <header class="area-order">
 
       <section id="pokemons-list">
@@ -68,7 +66,6 @@
         <div id="cardsPokemons" class="pokemons"></div>
       </section>
     </header>
-
   </main>
 
   <script src="src/data/pokemon/pokemon.js"></script>
